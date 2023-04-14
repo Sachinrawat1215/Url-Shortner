@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const url = 'http://localhost:8000/';
+const url = process.env.NODE_ENV === "development" ? process.env.REACT_APP_STAGING_SERVER_URL : process.env.REACT_APP_PRODUCTION_SERVER_URL;
 
 const sendUrl = async (urlData) => {
     try{
@@ -12,7 +12,7 @@ const sendUrl = async (urlData) => {
 
 const sendId = async (id) => {
     try{
-       return await axios.get(`${url}${id}`)
+       return await axios.get(`${url}/${id}`)
     }catch(error){
         console.log('Failed to send id due to', error);
     }

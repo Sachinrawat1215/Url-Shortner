@@ -4,7 +4,7 @@ import {sendUrl} from '../Service/api';
 const Input = () => {
     const [Text, setText] = useState('');
     const [btnText, setbtnText] = useState('Short');
-    const url = 'geturl.netlify.app/'
+    const url = window.location.host;
 
     const getText = (e) => {
         setText(e.target.value);
@@ -36,7 +36,7 @@ const Input = () => {
             };
             sendUrl(urlData);
             setbtnText('Copy');
-            setText(`${url}${urlData.code}`);
+            setText(`${url}/${urlData.code}`);
         }else if(btnText === 'Copy'){
             let inputElm = document.createElement('input');
             inputElm.setAttribute('value', Text);

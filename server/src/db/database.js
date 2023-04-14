@@ -6,8 +6,8 @@ const connection = (URL) => {
         useUnifiedTopology: true
     }).then(() => {
         console.log(`Connection to database sucessfull...`);
-    }).catch(() => {
-        console.log(`Failed to connect to database...`);
+    }).catch((error) => {
+        console.log(`Failed to connect to database...`, error);
     })
 };
 
