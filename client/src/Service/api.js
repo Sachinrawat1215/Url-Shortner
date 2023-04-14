@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const url = process.env.NODE_ENV === "development" ? process.env.REACT_APP_STAGING_SERVER_URL : process.env.REACT_APP_PRODUCTION_SERVER_URL;
+const url = process.env.REACT_APP_NODE_ENV === "development" ? process.env.REACT_APP_STAGING_SERVER_URL : process.env.REACT_APP_PRODUCTION_SERVER_URL;
 
 const sendUrl = async (urlData) => {
     try{
